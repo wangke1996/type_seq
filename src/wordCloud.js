@@ -7,8 +7,8 @@ import SentimentWords from './data/sentimentWords';
 export const positive = Array.prototype.concat(...SentimentWords.positive.map(x => x.children));
 export const negative = Array.prototype.concat(...SentimentWords.negative.map(x => x.children));
 const publicUrl = process.env.PUBLIC_URL;
-export const positiveMask = publicUrl + '/img/positive.jpg';
-export const negativeMask = publicUrl + '/img/negative.jpg';
+export const positiveMask = publicUrl + '/img/positive.bk.jpg';
+export const negativeMask = publicUrl + '/img/negative.bk.jpg';
 
 function getTextAttrs(cfg) {
     return _.assign(
@@ -71,6 +71,8 @@ export class Wordcloudmask extends React.Component {
 
                 //max execute time
                 rotate() {
+                    // let random = Math.random();
+                    // return (random-0.5) * 180;
                     let random = ~~(Math.random() * 4) % 4;
 
                     if (random === 2) {
@@ -82,7 +84,9 @@ export class Wordcloudmask extends React.Component {
 
                 fontSize(d) {
                     const divisor = (max - min) !== 0 ? (max - min) : 1;
-                    return ((d.value - min) / divisor) * (50 - 10) + 15;
+                    return ((d.value - min) / divisor) * (32 - 8) + 8;
+                    // const divisor = (max - min) !== 0 ? (max - min) : 1;
+                    // return ((d.value - min) / divisor) * (50 - 10) + 15;
                 }
             });
             this.setState({
@@ -114,17 +118,8 @@ export class Wordcloudmask extends React.Component {
             >
                 <Tooltip showTitle={false}/>
                 <Coord reflect="y"/>
-                <Geom type="point" position="x*y" color="text" shape={this.props.shape} tooltip='freq'
-                    // select={[true, d => {
-                    //     console.log(d);
-                    //     return {
-                    //         mode: 'single', // 选中模式，单选、多选
-                    //         style: {}, // 选中后 shape 的样式
-                    //         cancelable: true, // 选中之后是否允许取消选中，默认允许取消选中
-                    //         animate: true // 选中是否执行动画，默认执行动画
-                    //     };
-                    // }]}
-                />
+                <Geom type="point" position="x*y" color="text" shape={this.props.shape} tooltip='freq'/>
+                {/*<Geom type="point" position="x*y" color="black" shape={this.props.shape} tooltip='freq'/>*/}
             </Chart>
         </div>;
     }

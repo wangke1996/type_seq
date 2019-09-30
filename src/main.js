@@ -73,7 +73,7 @@ export class Main extends Component {
                             <SearchTree data={sentimentWords.positive} value={this.state.value}
                                         onChange={this.onChange.bind(this)} placeholder='Select a positive word'/>
                             <Wordcloudmask data={positive} img={positiveMask} shape='cloud'
-                                           size={550}//{Math.floor(window.innerWidth / 3)}
+                                           size={Math.floor(window.innerWidth / 3)}//550
                                            onChange={this.onChange.bind(this)}/>
                         </Col>
                         <Col span={8} className='center'>
@@ -81,7 +81,7 @@ export class Main extends Component {
                             <SearchTree data={sentimentWords.negative} value={this.state.value}
                                         onChange={this.onChange.bind(this)} placeholder='Select a negative word'/>
                             <Wordcloudmask data={negative} img={negativeMask} shape='cloud'
-                                           size={550}//{Math.floor(window.innerWidth / 3)}
+                                           size={Math.floor(window.innerWidth / 3)}
                                            onChange={this.onChange.bind(this)}/>
                         </Col>
                     </Row>
