@@ -68,20 +68,20 @@ export class Main extends Component {
                         {/*onSelect={this.onWordSelect.bind(this)}/></Col>*/}
                         {/*<Col span={8}><SearchTree data={sentimentWords.negative}*/}
                         {/*onSelect={this.onWordSelect.bind(this)}/></Col>*/}
-                        <Col span={8} className='center'>
+                        <Col span={12} className='center'>
                             <Divider><h1>Positive Words</h1></Divider>
                             <SearchTree data={sentimentWords.positive} value={this.state.value}
                                         onChange={this.onChange.bind(this)} placeholder='Select a positive word'/>
                             <Wordcloudmask data={positive} img={positiveMask} shape='cloud'
-                                           size={Math.floor(window.innerWidth / 3)}//550
+                                           size={Math.floor(window.innerWidth / 2)}//550
                                            onChange={this.onChange.bind(this)}/>
                         </Col>
-                        <Col span={8} className='center'>
+                        <Col span={12} className='center'>
                             <Divider><h1>Negative Words</h1></Divider>
                             <SearchTree data={sentimentWords.negative} value={this.state.value}
                                         onChange={this.onChange.bind(this)} placeholder='Select a negative word'/>
                             <Wordcloudmask data={negative} img={negativeMask} shape='cloud'
-                                           size={Math.floor(window.innerWidth / 3)}
+                                           size={Math.floor(window.innerWidth / 2)}
                                            onChange={this.onChange.bind(this)}/>
                         </Col>
                     </Row>

@@ -72,7 +72,7 @@ export class Wordcloudmask extends React.Component {
                 //max execute time
                 rotate() {
                     // let random = Math.random();
-                    // return (random-0.5) * 180;
+                    // return (random-0.5) * 120;
                     let random = ~~(Math.random() * 4) % 4;
 
                     if (random === 2) {
